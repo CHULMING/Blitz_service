@@ -1,0 +1,3 @@
+const AboutCompany = () => <></>;
+
+export { AboutCompany };
