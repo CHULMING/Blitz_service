@@ -5,7 +5,6 @@ import Box from "@mui/material/Box";
 const AboutVideo = () => (
   <>
     <Wrapper>
-      <p>hello</p>
       <Video></Video>
       <p>hello</p>
     </Wrapper>
