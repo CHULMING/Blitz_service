@@ -1,3 +1,0 @@
-const AboutCompany = () => <></>;
-
-export { AboutCompany };

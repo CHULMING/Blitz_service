@@ -5,8 +5,6 @@ export const Typograph = (props) => {
     <Typography
       variant={props.size}
       noWrap
-      component="a"
-      href="/"
       sx={{
         mr: 2,
         display: { xs: "flex", md: "flex" },
@@ -14,19 +12,11 @@ export const Typograph = (props) => {
         fontWeight: 500,
         letterSpacing: ".1rem",
         color: "inherit",
-        textDecoration: "none",
+        textDecoration: props.underline ? "underline" : "none",
       }}
     >
       {props.word}
     </Typography>
   );
-
-  if (props.underline) {
-    return (
-      <Typography sx={{ textDecoration: "underline" }} display="inline">
-        {c}
-      </Typography>
-    );
-  }
   return c;
 };

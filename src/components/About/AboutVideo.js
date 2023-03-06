@@ -5,23 +5,22 @@ import Box from "@mui/material/Box";
 const AboutVideo = () => (
   <>
     <Wrapper>
-      <Video></Video>
-      <p>hello</p>
+      <Overlay />
+      <Video />
     </Wrapper>
   </>
 );
-
-const Wrapper = styled(Box)`
-  background: linear-gradient(
-    to bottom,
-    rgba(50, 50, 50, 0.5),
-    rgba(255, 0, 0, 0.8)
-  );
+const Overlay = styled(Box)`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
 `;
+
+const Wrapper = styled(Box)``;
 
 const Video = () => (
   <ReactPlayer
-    className="react-player"
     url={"videos/sample_video.mp4"}
     playing={true}
     muted={true}

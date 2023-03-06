@@ -10,12 +10,14 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-
 import { Typograph } from "./Typograph";
-
-const pages = ["Products", "Pricing", "Blog"];
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+const pages = ["ABOUT", "WHAT TO DO", "INQUIRY"];
 
 function MenuBar() {
+  const currentMenu = useSelector((state) => state.saveCurrent.menu);
+
   const [anchorElNav, setAnchorElNav] = React.useState(false);
 
   const handleOpenNavMenu = (event) => {
@@ -81,11 +83,17 @@ function MenuBar() {
             >
               {pages.map((page) => (
                 <Button
+                  LinkComponent={Link}
+                  to={"/" + page.toLowerCase().replace(/ /g, "")}
                   key={page}
                   onClick={handleCloseNavMenu}
                   sx={{ my: 3, mr: 5, color: "white", display: "block" }}
                 >
-                  <Typograph size="h6" word={page} underline={true} />
+                  <Typograph
+                    size="h6"
+                    word={page}
+                    underline={page.toLowerCase() === currentMenu.toLowerCase()}
+                  />
                 </Button>
               ))}
             </Box>
