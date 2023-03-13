@@ -14,8 +14,9 @@ const About = () => {
   useEffect(() => {
     dispatch(save("About"));
   });
+  // width="100vw" height="100vh"
   return (
-    <>
+    <Box id="about" position="relative">
       <Box id="aboutMain" position="relative">
         <AboutVideo></AboutVideo>
         <AboutContent></AboutContent>
@@ -24,7 +25,7 @@ const About = () => {
       <Box id="aboutCompany" position="relative">
         <AboutCompany></AboutCompany>
       </Box>
-    </>
+    </Box>
   );
 };
 
